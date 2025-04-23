@@ -2,7 +2,7 @@ from flask import Flask, request, send_from_directory, jsonify
 from flask_cors import CORS
 import os
 import uuid
-from filters import apply_filter  # This imports the function to apply filters
+from backend.filters import apply_filter  # This imports the function to apply filters
 
 app = Flask(__name__)
 CORS(app)  # Allows cross-origin requests from frontend
@@ -13,6 +13,10 @@ PROCESSED_FOLDER = os.path.join(BASE_DIR, 'static', 'processed')
 
 # Create the folder if it doesn't exist
 os.makedirs(PROCESSED_FOLDER, exist_ok=True)
+
+@app.route('/')
+def index():
+    return "<h1>Welcome to PixelPotion API!</h1><p>Use /upload to POST an image.</p>"
 
 @app.route('/upload', methods=['POST'])
 def upload_image():
