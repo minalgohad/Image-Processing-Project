@@ -2,7 +2,7 @@ from flask import Flask, request, send_from_directory, jsonify
 from flask_cors import CORS
 import os
 import uuid
-from backend.filters import apply_filter  # This imports the function to apply filters
+from filters import apply_filter  # This imports the function to apply filters
 
 app = Flask(__name__)
 CORS(app)  # Allows cross-origin requests from frontend
