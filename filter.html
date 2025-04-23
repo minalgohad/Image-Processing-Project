@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Filter - PixelPotion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <h1>Upload and Apply Your Magic Filter</h1>
+        </div>
+    </header>
+
+    <div class="filter-container">
+        <input type="file" id="imageInput" accept="image/*">
+        <div id="imagePreview"></div>
+
+        <select id="filterSelect">
+            <option value="mean">Mean Filter</option>
+            <option value="median">Median Filter</option>
+            <option value="gaussian">Gaussian Blur</option>
+            <option value="grayscale">Grayscale</option>
+            <option value="sharpen">Sharpen</option>
+        </select>
+
+        <button id="applyFilterBtn">Apply Filter</button>
+    </div>
+
+    <div id="loadingSpinner" style="display: none;">Loading...</div>
+
+    <footer>
+        <p>&copy; 2025 PixelPotion. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
